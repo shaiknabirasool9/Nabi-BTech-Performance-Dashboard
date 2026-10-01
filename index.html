@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nabi | B.Tech Academic Performance Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="top"><div class="toprow">
+<div><h1>🎓 B.Tech Academic Performance Dashboard</h1><div class="sub">Interactive result analysis • Filter by semester, subject, grade, component and exam session</div></div>
+<div style="font-size:12px;opacity:.8">NABI RASOOL</div>
+</div></header>
+
+<main class="wrap">
+<section class="filters">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+<strong>🔎 Filters & Slicers</strong><span id="filterCount" style="font-size:12px;color:#64748b">All records</span>
+</div>
+<div class="filtergrid">
+<div><label>Semester</label><select id="semester"><option value="">All</option><option value="1-1">1-1</option><option value="1-2">1-2</option><option value="2-1">2-1</option><option value="2-2">2-2</option><option value="3-1">3-1</option><option value="3-2">3-2</option><option value="4-1">4-1</option><option value="4-2">4-2</option></select></div>
+<div><label>Academic Level</label><select id="level"><option value="">All</option><option value="I Year I Semester">I Year I Semester</option><option value="I Year II Semester">I Year II Semester</option><option value="II Year I Semester">II Year I Semester</option><option value="II Year II Semester">II Year II Semester</option><option value="III Year I Semester">III Year I Semester</option><option value="III Year II Semester">III Year II Semester</option><option value="IV Year I Semester">IV Year I Semester</option><option value="IV Year II Semester">IV Year II Semester</option></select></div>
+<div><label>Exam Session</label><select id="session"><option value="">All</option><option value="Apr 2025">Apr 2025</option><option value="Apr-May 2022">Apr-May 2022</option><option value="Aug-Sep 2023">Aug-Sep 2023</option><option value="Dec 2024-Jan 2025">Dec 2024-Jan 2025</option><option value="Feb 2023">Feb 2023</option><option value="Jan 2024">Jan 2024</option><option value="Jul 2024">Jul 2024</option><option value="Sep 2022">Sep 2022</option></select></div>
+<div><label>Subject</label><select id="subject"><option value="">All</option><option value="ADVANCED DATA STRUCTURES &amp; ALGORITHMS">ADVANCED DATA STRUCTURES &amp; ALGORITHMS</option><option value="ADVANCED DATA STRUCTURES &amp; ALGORITHMS LAB">ADVANCED DATA STRUCTURES &amp; ALGORITHMS LAB</option><option value="APPLIED PHYSICS">APPLIED PHYSICS</option><option value="APPLIED PHYSICS LAB">APPLIED PHYSICS LAB</option><option value="ARTIFICIAL INTELLIGENCE">ARTIFICIAL INTELLIGENCE</option><option value="ARTIFICIAL INTELLIGENCE LAB">ARTIFICIAL INTELLIGENCE LAB</option><option value="BASIC ELECTRICAL &amp; ELECTRONICS ENGINEERING">BASIC ELECTRICAL &amp; ELECTRONICS ENGINEERING</option><option value="BASIC ELECTRICAL &amp; ELECTRONICS ENGINEERING LAB">BASIC ELECTRICAL &amp; ELECTRONICS ENGINEERING LAB</option><option value="C-PROGRAMMING &amp; DATA STRUCTURES">C-PROGRAMMING &amp; DATA STRUCTURES</option><option value="C-PROGRAMMING &amp; DATA STRUCTURES LAB">C-PROGRAMMING &amp; DATA STRUCTURES LAB</option><option value="CHEMISTRY">CHEMISTRY</option><option value="CHEMISTRY LAB">CHEMISTRY LAB</option><option value="CHEMISTRY OF ENERGY MATERIALS">CHEMISTRY OF ENERGY MATERIALS</option><option value="COMMUNICATIVE ENGLISH">COMMUNICATIVE ENGLISH</option><option value="COMMUNICATIVE ENGLISH LAB">COMMUNICATIVE ENGLISH LAB</option><option value="COMMUNITY SERVICE PROJECT">COMMUNITY SERVICE PROJECT</option><option value="COMPILER DESIGN">COMPILER DESIGN</option><option value="COMPILER DESIGN LAB">COMPILER DESIGN LAB</option><option value="COMPUTER NETWORKS">COMPUTER NETWORKS</option><option value="COMPUTER NETWORKS LAB">COMPUTER NETWORKS LAB</option><option value="COMPUTER ORGANIZATION">COMPUTER ORGANIZATION</option><option value="COMPUTER VISION AND IMAGE PROCESSING - FUNDAMENTALS AND APPLICATIONS">COMPUTER VISION AND IMAGE PROCESSING - FUNDAMENTALS AND APPLICATIONS</option><option value="Cloud Computing">Cloud Computing</option><option value="DATABASE MANAGEMENT SYSTEMS">DATABASE MANAGEMENT SYSTEMS</option><option value="DATABASE MANAGEMENT SYSTEMS LAB">DATABASE MANAGEMENT SYSTEMS LAB</option><option value="DESIGN THINKING FOR INNOVATION">DESIGN THINKING FOR INNOVATION</option><option value="DETERMINISTIC &amp; STOCHASTIC STATISTICAL METHODS">DETERMINISTIC &amp; STOCHASTIC STATISTICAL METHODS</option><option value="DIGITAL ELECTRONICS &amp; MICROPROCESSORS">DIGITAL ELECTRONICS &amp; MICROPROCESSORS</option><option value="DIGITAL ELECTRONICS &amp; MICROPROCESSORS LAB">DIGITAL ELECTRONICS &amp; MICROPROCESSORS LAB</option><option value="DIGITAL IMAGE PROCESSING">DIGITAL IMAGE PROCESSING</option><option value="DISCRETE MATHEMATICS &amp; GRAPH THEORY">DISCRETE MATHEMATICS &amp; GRAPH THEORY</option><option value="Deep Learning">Deep Learning</option><option value="ENGINEERING DRAWING">ENGINEERING DRAWING</option><option value="ENGINEERING GRAPHICS LAB">ENGINEERING GRAPHICS LAB</option><option value="ENGINEERING WORKSHOP">ENGINEERING WORKSHOP</option><option value="ENVIRONMENTAL SCIENCE">ENVIRONMENTAL SCIENCE</option><option value="Evaluation of Industry Internship">Evaluation of Industry Internship</option><option value="FORMAL LANGUAGES AND AUTOMATA THEORY">FORMAL LANGUAGES AND AUTOMATA THEORY</option><option value="Full Internship &amp; Project Work">Full Internship &amp; Project Work</option><option value="INTELLECTUAL PROPERTY RIGHTS &amp; PATENTS">INTELLECTUAL PROPERTY RIGHTS &amp; PATENTS</option><option value="INTERNET OF THINGS">INTERNET OF THINGS</option><option value="INTERNET OF THINGS LAB">INTERNET OF THINGS LAB</option><option value="IT WORKSHOP">IT WORKSHOP</option><option value="LINEAR ALGEBRA AND CALCULUS">LINEAR ALGEBRA AND CALCULUS</option><option value="MACHINE LEARNING">MACHINE LEARNING</option><option value="MACHINE LEARNING LAB">MACHINE LEARNING LAB</option><option value="MANAGERIAL ECONOMICS &amp; FINANCIAL ANALYSIS">MANAGERIAL ECONOMICS &amp; FINANCIAL ANALYSIS</option><option value="Management Science">Management Science</option><option value="NSS/NCC/NSO ACTIVITIES">NSS/NCC/NSO ACTIVITIES</option><option value="Natural Language Processing">Natural Language Processing</option><option value="OBJECT ORIENTED PROGRAMMING THROUGH JAVA">OBJECT ORIENTED PROGRAMMING THROUGH JAVA</option><option value="OBJECT ORIENTED PROGRAMMING THROUGH JAVA LAB">OBJECT ORIENTED PROGRAMMING THROUGH JAVA LAB</option><option value="OPERATING SYSTEMS">OPERATING SYSTEMS</option><option value="OPERATING SYSTEMS LAB">OPERATING SYSTEMS LAB</option><option value="PHYSICS OF ELECTRONIC MATERIALS AND DEVICES">PHYSICS OF ELECTRONIC MATERIALS AND DEVICES</option><option value="PROBABILITY &amp; STATISTICS">PROBABILITY &amp; STATISTICS</option><option value="PYTHON PROGRAMMING &amp; DATA SCIENCE">PYTHON PROGRAMMING &amp; DATA SCIENCE</option><option value="PYTHON PROGRAMMING &amp; DATA SCIENCE LAB">PYTHON PROGRAMMING &amp; DATA SCIENCE LAB</option><option value="SOC III-ADVANCED WEB APPLICATION DEVELOPMENT">SOC III-ADVANCED WEB APPLICATION DEVELOPMENT</option><option value="SOC-I: WEB APPLICATION DEVELOPMENT">SOC-I: WEB APPLICATION DEVELOPMENT</option><option value="SOC-II: EXPLORATORY DATA ANALYSIS WITH R">SOC-II: EXPLORATORY DATA ANALYSIS WITH R</option><option value="SOC-IV:SOFT SKILLS">SOC-IV:SOFT SKILLS</option><option value="SOC-V Mobile Application Development">SOC-V Mobile Application Development</option><option value="SOFTWARE ENGINEERING">SOFTWARE ENGINEERING</option><option value="SOFTWARE ENGINEERING LAB">SOFTWARE ENGINEERING LAB</option><option value="Sensors and Actuators for Engineering Applications">Sensors and Actuators for Engineering Applications</option><option value="UNIVERSAL HUMAN VALUES">UNIVERSAL HUMAN VALUES</option><option value="Waste and Effluent Management">Waste and Effluent Management</option></select></div>
+<div><label>Component</label><select id="component"><option value="">All</option><option value="Internship">Internship</option><option value="Lab">Lab</option><option value="Other">Other</option><option value="Project">Project</option><option value="Theory">Theory</option><option value="Workshop">Workshop</option></select></div>
+<div><label>Grade</label><select id="grade"><option value="">All</option><option value="A">A</option><option value="B">B</option><option value="C">C</option><option value="D">D</option><option value="S">S</option><option value="Y">Y</option></select></div>
+</div>
+<div class="actions"><button class="primary" onclick="applyFilters()">Apply Filters</button><button class="secondary" onclick="resetFilters()">↻ Reset All</button></div>
+</section>
+
+<section class="cards">
+<div class="card"><div class="klabel">Total Marks</div><div class="kvalue" id="kMarks">—</div><div class="hint">Selected records</div></div>
+<div class="card"><div class="klabel">Percentage</div><div class="kvalue" id="kPct">—</div><div class="hint">Total / maximum marks</div></div>
+<div class="card"><div class="klabel">Credits</div><div class="kvalue" id="kCredits">—</div><div class="hint">Selected credits</div></div>
+<div class="card"><div class="klabel">Subjects</div><div class="kvalue" id="kSubjects">—</div><div class="hint">Distinct subjects</div></div>
+<div class="card"><div class="klabel">Pass Rate</div><div class="kvalue" id="kPass">—</div><div class="hint">Selected result records</div></div>
+</section>
+
+<section class="grid2">
+<div class="panel"><h2>📈 Semester Performance</h2><div class="chart"><canvas id="semChart"></canvas></div></div>
+<div class="panel"><h2>🍩 Grade Distribution</h2><div class="chart"><canvas id="gradeChart"></canvas></div></div>
+</section>
+
+<section class="panel" style="margin-bottom:16px">
+<h2>📊 Subject Performance</h2>
+<table><thead><tr><th>Subject</th><th>Marks</th><th>Percentage</th><th>Performance</th></tr></thead><tbody id="subjectBody"></tbody></table>
+</section>
+
+<section class="grid2">
+<div class="panel"><h2>🧪 Internal vs External</h2><div class="chart"><canvas id="componentChart"></canvas></div></div>
+<div class="panel"><h2>🏆 Key Insights</h2><div id="insights" style="line-height:1.8;font-size:13px;color:#475569"></div></div>
+</section>
+
+<div class="footer">Dashboard calculations use the detailed Results sheet. Summary sheets are retained for reference and are not used to double-count KPI totals.</div>
+</main>
+
+<script src="assets/js/app.js" defer></script>
+</body></html>
